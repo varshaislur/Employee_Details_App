@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
               color: Colors.deepPurple,
               fontWeight: FontWeight.bold,
             ),),
-            Text("Info ",style: TextStyle(
+            Text("Database ",style: TextStyle(
               color: Colors.yellow,
               fontWeight: FontWeight.bold,
             ),),
