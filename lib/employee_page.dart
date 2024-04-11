@@ -28,11 +28,11 @@ class _EmployeePageState extends State<EmployeePage> {
           mainAxisAlignment: MainAxisAlignment.center
           ,
           children: [
-            Text("Employee ",style: TextStyle(
+            Text("Add ",style: TextStyle(
               color: Colors.deepPurple,
               fontWeight: FontWeight.bold,
             ),),
-            Text("Form",style: TextStyle(
+            Text("Employee",style: TextStyle(
               color: Colors.yellow,
               fontWeight: FontWeight.bold,
             ),),
