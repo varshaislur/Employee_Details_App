@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Text(
-              "Name",
+              "Name:",
               style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 20,
@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Text(
-              "Age",
+              "Age:",
               style: TextStyle(
                 color: Colors.deepPurple,
                 fontSize: 20,
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Text(
-              "Location",
+              "Location:",
 
               style: TextStyle(
                 color: Colors.deepPurple,
@@ -196,7 +196,7 @@ class _HomePageState extends State<HomePage> {
               };
               DatabaseFunctions().updateEmployee(updateEmployee, id);
 
-            }, child: Text("update employee"))
+            }, child: Text("update employee details"))
 
           ],
 
