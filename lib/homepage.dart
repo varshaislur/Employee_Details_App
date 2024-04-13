@@ -68,28 +68,38 @@ class _HomePageState extends State<HomePage> {
               DocumentSnapshot ds= snapshot.data.docs[index];
               print(ds.id);
               print(index);
-              return ListTile(
-                leading:  IconButton(onPressed: () {
-                  nameHome.text=ds["Name"];
-                  ageHome.text=ds["Age"];
-                  locationHome.text=ds["Location"];
-                  EditEmployeeDetails2(ds.id.toString());
-
-                }, icon: Icon(Icons.edit),
-
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  // color: Colors.amber,
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: ListTile(
+                    leading:  IconButton(onPressed: () {
+                      nameHome.text=ds["Name"];
+                      ageHome.text=ds["Age"];
+                      locationHome.text=ds["Location"];
+                      EditEmployeeDetails2(ds.id.toString());
+                  
+                    }, icon: Icon(Icons.edit),
+                  
+                    ),
+                    trailing:
+                        IconButton(onPressed: (){
+                          DatabaseFunctions().deleteEmployee(ds.id.toString());
+                        }, icon: Icon(Icons.delete)),
+                  
+                    title:Column(
+                      children: [
+                        Text("Name:"+ds["Name"]),
+                        Text("age"+ds["Age"]),
+                        Text("location:"+ds["Location"])
+                      ],
+                    )
+                  ),
                 ),
-                trailing:
-                    IconButton(onPressed: (){
-                      DatabaseFunctions().deleteEmployee(ds.id.toString());
-                    }, icon: Icon(Icons.delete)),
-
-                title:Column(
-                  children: [
-                    Text("Name:"+ds["Name"]),
-                    Text("age"+ds["Age"]),
-                    Text("location:"+ds["Location"])
-                  ],
-                )
               );
               }):
           Container();
